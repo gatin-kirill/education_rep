@@ -21,7 +21,7 @@ while True:
     if GPIO.input(arrow_up):
         num += 1
         if num>255:
-            num = 255
+            num = 0
         print(num, dec2bin(num))
         time.sleep(sleep_time)
 
