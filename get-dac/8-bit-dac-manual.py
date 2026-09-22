@@ -45,7 +45,7 @@ try:
             number_to_dac(number)
 
         except ValueError:
-            printf("Вы ввели не число. Попробуйте ещё раз\n")
+            print("Вы ввели не число. Попробуйте ещё раз\n")
 
 finally:
     GPIO.output(pins, 0)
