@@ -2,7 +2,7 @@ import mcp4725_driver as mcp4725
 import signal_generator as sg
 import time
 
-amplitude = 3.2
+amplitude = 2
 signal_frequency = 10
 sampling_frequency = 1000
 pins = [16, 20, 21, 25, 26, 17, 27, 22]
