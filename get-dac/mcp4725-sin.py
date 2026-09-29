@@ -1,15 +1,15 @@
-import r2r_dac as r2r
+import mcp4725_driver as mcp4725
 import signal_generator as sg
 import time
 
 amplitude = 3.2
 signal_frequency = 10
-sampling_frequency = 10000
+sampling_frequency = 1000
 pins = [16, 20, 21, 25, 26, 17, 27, 22]
 dynamic_range = 3.3
 
 try:
-    dac = r2r.R2R_DAC(pins, dynamic_range)
+    dac = mcp4725.MCP4725(dynamic_range)
 
     while True:
             try:

@@ -1,5 +1,5 @@
 import r2r_dac as r2r
-import signal_generator as sg
+import signal_generator_triangle as sg
 import time
 
 amplitude = 3.2
@@ -13,7 +13,7 @@ try:
 
     while True:
             try:
-                voltage = sg.get_sin_wave_amplitude(signal_frequency, time.time())*amplitude
+                voltage = sg.get_triangle_amplitude(signal_frequency, time.time())*amplitude
                 sg.wait_for_sampling_period(sampling_frequency)
                 dac.set_voltage(voltage)
 

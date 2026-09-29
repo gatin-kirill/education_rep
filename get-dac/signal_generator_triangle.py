@@ -1,8 +1,7 @@
-import numpy as np
 import time
 
-def get_sin_wave_amplitude(freq, tm):
-    return 0.5*(1+np.sin(2*np.pi*freq*tm))
+def get_triangle_amplitude(freq, tm):
+    return freq*abs(1/freq-2*(tm%(1/freq)))
 
 def wait_for_sampling_period(sampling_frequency):
     time.sleep(1/sampling_frequency)

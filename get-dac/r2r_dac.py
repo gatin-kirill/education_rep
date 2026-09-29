@@ -43,13 +43,18 @@ class R2R_DAC:
             print("Число вышло за допустимый диапозон")
             return 0
 
+        '''
         for pin in self.pins:
             GPIO.output(pin, 0)
         
+        '''
         bin_num = ''
         while number != 0:
             bin_num=str(number%2)+bin_num
             number = number//2
+
+        if len(bin_num)<8:
+            bin_num = '0'*(8-len(bin_num))+bin_num
 
         for i in range(len(bin_num)):
             GPIO.output(self.pins[8-len(bin_num)+i], int(bin_num[i]))
