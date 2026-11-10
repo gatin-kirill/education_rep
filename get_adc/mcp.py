@@ -9,7 +9,7 @@ mcp = mcp3021_driver.MCP3021(dynamic_range)
 
 voltage_values = []
 time_values = []
-duration = 6.0
+duration = 3.0
 
 try:
     start_time = time.time()

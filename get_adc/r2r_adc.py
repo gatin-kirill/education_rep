@@ -5,7 +5,7 @@ def dec2bin(value):
     return [int(element) for element in bin(value)[2:].zfill(8)]
 
 class R2R_ADC:
-    def __init__(self, dynamic_range, compare_time=0.01, verbose = False):
+    def __init__(self, dynamic_range, compare_time=0.001, verbose = False):
         self.dynamic_range = dynamic_range
         self.verbose = verbose
         self.compare_time = compare_time
@@ -36,7 +36,7 @@ class R2R_ADC:
     def sequential_counting_adc(self):
         num = 0
         self.number_to_dac(num)
-        while not(GPIO.input(self.comp_gpio)) and num<=2**len(self.bits_gpio):
+        while not(GPIO.input(self.comp_gpio)) and num<2**len(self.bits_gpio):
             self.number_to_dac(num)
             time.sleep(self.compare_time)
             num+=1
